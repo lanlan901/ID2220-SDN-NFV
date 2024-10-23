@@ -1,0 +1,124 @@
+Starting web server WS1 on port 80
+Starting web server WS2 on port 80
+Starting web server WS3 on port 80
+tcpdump on insp start
+-----ping test------
+-----h1------
+h1 ping to h2: Expected True, Result: Success
+
+
+h1 ping to h3: Expected False, Result: Success
+
+
+h1 ping to h4: Expected False, Result: Success
+
+
+-----h1------
+h2 ping to h1: Expected True, Result: Success
+
+
+h2 ping to h3: Expected False, Result: Success
+
+
+h2 ping to h4: Expected False, Result: Success
+
+
+-----h3------
+h3 ping to h1: Expected True, Result: Success
+
+
+h3 ping to h2: Expected True, Result: Success
+
+
+h3 ping to h4: Expected True, Result: Success
+
+
+-----h4------
+h4 ping to h1: Expected True, Result: Success
+
+
+h4 ping to h2: Expected True, Result: Success
+
+
+h4 ping to h3: Expected True, Result: Success
+
+
+
+
+-----webserver------
+-----ws1------
+h1 ping to ws1: Expected False, Result: Success
+
+
+h2 ping to ws1: Expected False, Result: Success
+
+
+h3 ping to ws1: Expected False, Result: Success
+
+
+h4 ping to ws1: Expected False, Result: Success
+
+
+-----ws2------
+h1 ping to ws2: Expected False, Result: Success
+
+
+h2 ping to ws2: Expected False, Result: Success
+
+
+h3 ping to ws2: Expected False, Result: Success
+
+
+h4 ping to ws2: Expected False, Result: Success
+
+
+-----ws3------
+h1 ping to ws3: Expected False, Result: Success
+
+
+h2 ping to ws3: Expected False, Result: Success
+
+
+h3 ping to ws3: Expected False, Result: Success
+
+
+h4 ping to ws3: Expected False, Result: Success
+
+
+
+
+------ping virtual IP------
+h1 ping to 100.0.0.45: Expected True, Result: Success
+
+
+h2 ping to 100.0.0.45: Expected True, Result: Success
+
+
+h3 ping to 100.0.0.45: Expected True, Result: Success
+
+
+h4 ping to 100.0.0.45: Expected True, Result: Success
+
+
+
+
+-----HTTP method Test-----
+h3 HTTP method: GET , Expected False, Result: Success
+h3 HTTP method: POST , Expected True, Result: Success
+h3 HTTP method: HEAD , Expected False, Result: Success
+h3 HTTP method: OPTIONS , Expected False, Result: Success
+h3 HTTP method: TRACE , Expected False, Result: Success
+h3 HTTP method: PUT , Expected True, Result: Success
+h3 HTTP method: DELETE , Expected False, Result: Success
+h3 HTTP method: CONNECT , Expected False, Result: Success
+
+
+-----Linux and SQL code injection Test-----
+h3 keyword found cat /etc/passwd, expected False, Result: Success
+h3 keyword found cat /var/log/, expected False, Result: Success
+h3 keyword found INSERT, expected False, Result: Success
+h3 keyword found UPDATE, expected False, Result: Success
+h3 keyword found DELETE, expected False, Result: Success
+
+
+mininet> 

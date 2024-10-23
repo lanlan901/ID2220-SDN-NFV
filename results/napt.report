@@ -1,0 +1,16 @@
+
+     =================== NAPT Report ===================
+      Input Packet rate (pps): 3.86783815644
+      Output Packet rate (pps): 3.61143356053
+
+      Total # of   input packets: 392
+      Total # of  output packets: 364
+   
+      Total # of   ARP  requests: 11
+      Total # of   ARP responses: 6
+
+      Total # of     TCP packets: 301
+      Total # of    ICMP packets: 172   
+      Total # of dropped packets: 28   
+     =================================================
+    

@@ -1,0 +1,45 @@
+## How to run the project
+
+**make topo:**
+
+Starts mininet topology
+
+
+**make app:**
+
+Starts the controller.
+The default pox directory is set to '/opt/pox/'.
+However one should be able to overwrite it using make input.
+
+Example:
+`$ make poxdir=/pox/base/directory/ app`
+
+**make test:**
+
+Restarts topology, and the sdn controller. Then it runs provided test scenarios.
+
+**make clean:**
+
+Removes all junks added to different directories to run the application.
+
+fw2 killall tcpdump
+fw2 tcpdump -i fw2-eth2 -w pcap/fw2-eth2.pcap &
+fw2 tcpdump -i fw2-eth1 -w pcap/fw2-eth1.pcap &
+sw3 tcpdump -i sw3-eth1 -w pcap/sw3-eth1.pcap &
+sw3 tcpdump -i sw3-eth2 -w pcap/sw3-eth2.pcap &
+sw3 tcpdump -i sw3-eth3 -w pcap/sw3-eth3.pcap &
+sw4 tcpdump -i sw4-eth4 -w pcap/sw4-eth4.pcap &
+
+sudo tcpdump -i fw2-eth2 -n -w fw2_eth2.pcap &
+sudo tcpdump -i sw2-eth2 -n -w sw2_eth2.pcap &
+sudo tcpdump -i sw2-eth3 -n -w sw2_eth3.pcap &
+sudo tcpdump -i napt-eth2 -n -w napt_eth2.pcap &
+sudo tcpdump -i napt-eth1 -n -w napt_eth1.pcap &
+
+ssh -L 8080:localhost:8080 -p 2222 ik2220@localhost
+sudo ovs-ofctl dump-flows fw2
+https://hpd.gasmi.net/
+sudo click ./applications/nfv/napt.click
+h3 curl -X POST -d "" 100.0.0.45
+h3 curl -X PUT 100.0.0.45
+h3 curl -X PUT 100.0.0.45 -d "UPDATE"
